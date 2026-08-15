@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="300">
+<title>דשבורד אופציות — Paper Trading</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  body { font-family: Segoe UI, Arial, sans-serif; background:#0f1420; color:#e8ecf4;
+         margin:0; padding:24px; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  .sub { color:#8a93a6; font-size:13px; margin-bottom:20px; }
+  .cards { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:22px; }
+  .card { background:#1a2233; border-radius:12px; padding:14px 20px; min-width:150px; }
+  .card .lbl { font-size:12px; color:#8a93a6; }
+  .card .val { font-size:24px; font-weight:600; margin-top:4px; }
+  .pos { color:#4ade80; } .neg { color:#f87171; } .mid { color:#facc15; }
+  .panel { background:#1a2233; border-radius:12px; padding:16px 20px; margin-bottom:20px;
+           overflow-x:auto; }
+  .summary { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; font-size:13.5px; }
+  .summary h3 { font-size:14px; margin:0 0 8px; }
+  .summary ul { margin:0; padding-right:18px; }
+  .summary li { margin-bottom:7px; line-height:1.5; }
+  @media (max-width:900px) { .summary { grid-template-columns:1fr; } }
+  .panel h2 { font-size:15px; margin:0 0 12px; color:#c3cbdb; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th { text-align:right; color:#8a93a6; font-weight:500; padding:6px 8px;
+        border-bottom:1px solid #2a3450; }
+  td { padding:6px 8px; border-bottom:1px solid #232d45; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media (max-width:900px) { .grid2 { grid-template-columns:1fr; } }
+  canvas { max-height:320px; }
+  .note { color:#8a93a6; font-size:12px; margin-top:16px; }
+</style>
+</head>
+<body>
+<h1>דשבורד אופציות — Premium Harvest (Paper Trading)</h1>
+<div class="sub">עודכן: 15/08/2026 13:09 ·
+התחלה: 10/08/2026 ·
+הון וירטואלי: $100,000 · הדף מתרענן אוטומטית כל 5 דקות</div>
+
+<div class="cards">
+  <div class="card"><div class="lbl">שווי תיק</div>
+    <div class="val">$100,896</div></div>
+  <div class="card"><div class="lbl">תשואה כוללת</div>
+    <div class="val pos">+0.90%</div></div>
+  <div class="card"><div class="lbl">ממוצע שבועי (יעד 0.5%)</div>
+    <div class="val mid">— (אחרי שבוע מלא)</div></div>
+  <div class="card"><div class="lbl">רווח ממומש</div>
+    <div class="val pos">$1,245</div></div>
+  <div class="card"><div class="lbl">אחוז עסקאות מרוויחות</div>
+    <div class="val">100%</div></div>
+</div>
+
+
+<div class="panel">
+  <h2>סיכום מערכת — נכון לעדכון האחרון</h2>
+  <div class="summary">
+    <div><h3 class="pos">הצלחות</h3><ul><li>תשואה כוללת +0.90% ($+896) מאז תחילת הפעילות</li><li>9 מתוך 9 עסקאות שנסגרו הסתיימו ברווח (סה"כ ממומש $+1,245): 3 פקעו חסרות ערך, 6 נסגרו בלקיחת רווח אוטומטית</li></ul></div>
+    <div><h3 class="neg">כשלונות</h3><ul><li>אין עדיין עסקאות מפסידות או סטופים — אבל זה אומר בעיקר שהמערכת עוד לא נבחנה בשוק יורד</li></ul></div>
+    <div><h3 class="mid">סיכונים פתוחים</h3><ul><li>RIOT (סטרייק 19, פקיעה 2026-08-21): האופציה במחיר פי 1.7 מהפרמיה שנגבתה — סטופ בפי 3</li><li>הפוזיציה הגדולה: RIOT עם ביטחונות של $19,000 (19% מההון)</li><li>ניצול הון: 43% ($43,450 ביטחונות ומניות)</li><li>סיכון מובנה קבוע: מכירת PUT מרוויחה לאט ומפסידה מהר — שבוע של ירידה חדה בשוק יפגע בכמה פוזיציות בו-זמנית, וסטופ לא מגן מפני פתיחה בגאפ. התוצאות כאן ללא עמלות וללא slippage</li></ul></div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>שווי התיק מול קו היעד (0.5% בשבוע, ריבית דריבית)</h2>
+  <canvas id="eq"></canvas>
+</div>
+
+<div class="grid2">
+  <div class="panel">
+    <h2>תשואה שבועית מול יעד</h2>
+    <table><tr><th>שבוע</th><th>תשואה</th><th>יעד</th></tr><tr><td colspan='3'>עדיין אין שבוע שלם של נתונים</td></tr></table>
+  </div>
+  <div class="panel">
+    <h2>פוזיציות פתוחות</h2>
+    <table><tr><th>סוג</th><th>מניה</th><th>סטרייק</th><th>פקיעה</th><th>כמות</th>
+    <th>פרמיה/עלות</th><th>שווי נוכחי</th><th>נפתח</th></tr><tr><td>PUT מגובה מזומן</td><td>DKNG</td><td>24.5</td><td>2026-08-21</td><td>3</td><td>0.32</td><td>0.19</td><td>2026-08-12</td></tr><tr><td>PUT מגובה מזומן</td><td>INTC</td><td>101.0</td><td>2026-08-19</td><td>1</td><td>1.36</td><td>1.88</td><td>2026-08-14</td></tr><tr><td>PUT מגובה מזומן</td><td>RIOT</td><td>19.0</td><td>2026-08-21</td><td>10</td><td>0.48</td><td>0.81</td><td>2026-08-12</td></tr><tr><td>PUT מגובה מזומן</td><td>RIVN</td><td>15.0</td><td>2026-08-21</td><td>4</td><td>0.16</td><td>0.19</td><td>2026-08-14</td></tr><tr><td>PUT מגובה מזומן</td><td>SNAP</td><td>5.0</td><td>2026-08-21</td><td>2</td><td>0.05</td><td>0.03</td><td>2026-08-12</td></tr></table>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="panel">
+    <h2>עסקאות סגורות אחרונות</h2>
+    <table><tr><th>סוג</th><th>מניה</th><th>סטרייק</th><th>פקיעה</th><th>סיבה</th>
+    <th>רווח/הפסד</th><th>נסגר</th></tr><tr><td>PUT מגובה מזומן</td><td>NOW</td><td>120.0</td><td>2026-08-14</td><td>expired worthless</td><td class='pos'>$143</td><td>2026-08-15</td></tr><tr><td>PUT מגובה מזומן</td><td>MARA</td><td>9.0</td><td>2026-08-14</td><td>expired worthless</td><td class='pos'>$242</td><td>2026-08-15</td></tr><tr><td>PUT מגובה מזומן</td><td>COIN</td><td>144.0</td><td>2026-08-14</td><td>expired worthless</td><td class='pos'>$177</td><td>2026-08-15</td></tr><tr><td>PUT מגובה מזומן</td><td>INTC</td><td>98.0</td><td>2026-08-17</td><td>take profit</td><td class='pos'>$110</td><td>2026-08-14</td></tr><tr><td>PUT מגובה מזומן</td><td>CCL</td><td>26.5</td><td>2026-08-21</td><td>take profit</td><td class='pos'>$40</td><td>2026-08-14</td></tr><tr><td>PUT מגובה מזומן</td><td>SNAP</td><td>5.0</td><td>2026-08-21</td><td>take profit</td><td class='pos'>$11</td><td>2026-08-14</td></tr><tr><td>PUT מגובה מזומן</td><td>RIVN</td><td>15.5</td><td>2026-08-14</td><td>take profit</td><td class='pos'>$46</td><td>2026-08-12</td></tr><tr><td>PUT מגובה מזומן</td><td>HOOD</td><td>89.0</td><td>2026-08-14</td><td>take profit</td><td class='pos'>$172</td><td>2026-08-12</td></tr><tr><td>PUT מגובה מזומן</td><td>INTC</td><td>93.0</td><td>2026-08-14</td><td>take profit</td><td class='pos'>$304</td><td>2026-08-12</td></tr></table>
+  </div>
+  <div class="panel">
+    <h2>יומן פעולות</h2>
+    <table><tr><th>זמן</th><th>פעולה</th><th>פירוט</th></tr><tr><td>2026-08-15 10:00</td><td>CLOSE-CSP</td><td>NOW 120.0 exp 2026-08-14 x1 debit 0.00 (expired worthless) pnl $143</td></tr><tr><td>2026-08-15 10:00</td><td>CLOSE-CSP</td><td>COIN 144.0 exp 2026-08-14 x1 debit 0.00 (expired worthless) pnl $177</td></tr><tr><td>2026-08-15 10:00</td><td>CLOSE-CSP</td><td>MARA 9.0 exp 2026-08-14 x22 debit 0.00 (expired worthless) pnl $242</td></tr><tr><td>2026-08-14 18:30</td><td>SELL-CSP</td><td>RIVN 15.0 exp 2026-08-21 x4 credit 0.16 (delta 0.27, wk-yield 1.10%)</td></tr><tr><td>2026-08-14 18:30</td><td>CLOSE-CSP</td><td>CCL 26.5 exp 2026-08-21 x2 debit 0.06 (take profit) pnl $40</td></tr><tr><td>2026-08-14 17:00</td><td>SELL-CSP</td><td>INTC 101.0 exp 2026-08-19 x1 credit 1.36 (delta 0.26, wk-yield 1.96%)</td></tr><tr><td>2026-08-14 17:00</td><td>CLOSE-CSP</td><td>INTC 98.0 exp 2026-08-17 x1 debit 0.22 (take profit) pnl $110</td></tr><tr><td>2026-08-14 17:00</td><td>CLOSE-CSP</td><td>SNAP 5.0 exp 2026-08-21 x2 debit 0.01 (take profit) pnl $11</td></tr><tr><td>2026-08-12 20:00</td><td>SELL-CSP</td><td>INTC 98.0 exp 2026-08-17 x1 credit 1.32 (delta 0.27, wk-yield 2.01%)</td></tr><tr><td>2026-08-12 20:00</td><td>SELL-CSP</td><td>DKNG 24.5 exp 2026-08-21 x3 credit 0.32 (delta 0.27, wk-yield 1.13%)</td></tr><tr><td>2026-08-12 20:00</td><td>SELL-CSP</td><td>SNAP 5.0 exp 2026-08-21 x2 credit 0.05 (delta 0.22, wk-yield 0.86%)</td></tr><tr><td>2026-08-12 20:00</td><td>CLOSE-CSP</td><td>HOOD 89.0 exp 2026-08-14 x2 debit 0.24 (take profit) pnl $172</td></tr><tr><td>2026-08-12 17:01</td><td>SELL-CSP</td><td>RIOT 19.0 exp 2026-08-21 x10 credit 0.48 (delta 0.25, wk-yield 2.11%)</td></tr><tr><td>2026-08-12 17:01</td><td>SELL-CSP</td><td>CCL 26.5 exp 2026-08-21 x2 credit 0.26 (delta 0.24, wk-yield 0.82%)</td></tr><tr><td>2026-08-12 17:00</td><td>CLOSE-CSP</td><td>RIVN 15.5 exp 2026-08-14 x4 debit 0.04 (take profit) pnl $46</td></tr><tr><td>2026-08-12 17:00</td><td>CLOSE-CSP</td><td>INTC 93.0 exp 2026-08-14 x2 debit 0.25 (take profit) pnl $304</td></tr><tr><td>2026-08-10 17:01</td><td>SELL-CSP</td><td>INTC 93.0 exp 2026-08-14 x2 credit 1.77 (delta 0.28, wk-yield 3.43%)</td></tr><tr><td>2026-08-10 17:01</td><td>SELL-CSP</td><td>HOOD 89.0 exp 2026-08-14 x2 credit 1.10 (delta 0.23, wk-yield 2.27%)</td></tr><tr><td>2026-08-10 17:01</td><td>SELL-CSP</td><td>COIN 144.0 exp 2026-08-14 x1 credit 1.77 (delta 0.25, wk-yield 2.24%)</td></tr><tr><td>2026-08-10 17:01</td><td>SELL-CSP</td><td>MARA 9.0 exp 2026-08-14 x22 credit 0.11 (delta 0.18, wk-yield 2.24%)</td></tr><tr><td>2026-08-10 17:01</td><td>SELL-CSP</td><td>NOW 120.0 exp 2026-08-14 x1 credit 1.43 (delta 0.27, wk-yield 2.17%)</td></tr><tr><td>2026-08-10 17:01</td><td>SELL-CSP</td><td>RIVN 15.5 exp 2026-08-14 x4 credit 0.15 (delta 0.26, wk-yield 1.75%)</td></tr><tr><td>2026-08-10 17:01</td><td>SELL-CSP</td><td>SNAP 5.0 exp 2026-08-21 x2 credit 0.07 (delta 0.23, wk-yield 0.95%)</td></tr></table>
+  </div>
+</div>
+
+<div class="note">מסחר וירטואלי (Paper Trading) בלבד — המערכת אינה מחוברת לברוקר ואינה מבצעת
+עסקאות אמת. נתוני שוק: Yahoo Finance (עיכוב ~15 דק'). אין לראות בכך ייעוץ השקעות.</div>
+
+<script>
+new Chart(document.getElementById('eq'), {
+  type: 'line',
+  data: {
+    labels: ["2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15"],
+    datasets: [
+      { label: 'שווי תיק', data: [100188.0, 100458.0, 100841.0, 100687.0, 100898.0, 100896.0],
+         borderColor:'#60a5fa', backgroundColor:'rgba(96,165,250,.12)',
+         fill:true, tension:.25, pointRadius:2 },
+      { label: 'קו יעד', data: [100000.0, 100071.0, 100143.0, 100214.0, 100285.0, 100357.0],
+         borderColor:'#facc15', borderDash:[6,4], pointRadius:0, fill:false }
+    ]
+  },
+  options: {
+    plugins: { legend: { labels: { color:'#c3cbdb' } } },
+    scales: {
+      x: { ticks: { color:'#8a93a6' }, grid: { color:'#232d45' } },
+      y: { ticks: { color:'#8a93a6',
+             callback: v => '$' + v.toLocaleString() },
+           grid: { color:'#232d45' } }
+    }
+  }
+});
+</script>
+</body>
+</html>
