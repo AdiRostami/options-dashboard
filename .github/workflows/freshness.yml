@@ -1,0 +1,58 @@
+# Fails (→ GitHub emails the repo owner) when data.json has not been updated
+# for >120 minutes during NYSE trading hours. Runs in the cloud, so it still
+# fires when the engine machine is off or the engine is crash-looping.
+#
+# Why 120 min: the engine runs every 90 min (17:00–23:00 Israel = 10:00–16:00
+# ET), so 60 min would false-alarm between healthy runs. Why the check window
+# starts 10:30 ET: the first engine run of the day is 10:00 ET by design, so
+# earlier the data is legitimately yesterday's.
+name: data freshness
+
+on:
+  schedule:
+    # every hour at :45, wide UTC window covering 10:30-16:00 ET year-round
+    # (EDT = UTC-4, EST = UTC-5); the job itself decides if it's market hours
+    - cron: '45 13-21 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+      - name: check data.json age during market hours
+        run: |
+          set -e
+          export TZ=America/New_York
+          now_et=$(date +%H%M)
+          dow=$(date +%u)   # 1=Mon..7=Sun
+          today=$(date +%F)
+
+          holidays="2026-01-01 2026-01-19 2026-02-16 2026-04-03 2026-05-25
+                    2026-06-19 2026-07-03 2026-09-07 2026-11-26 2026-12-25"
+
+          if [ "$dow" -gt 5 ]; then echo "weekend — skip"; exit 0; fi
+          case " $holidays " in *" $today "*) echo "NYSE holiday — skip"; exit 0;; esac
+          if [ "$now_et" -lt 1030 ] || [ "$now_et" -gt 1600 ]; then
+            echo "outside check window (10:30-16:00 ET) — skip"; exit 0
+          fi
+
+          gen=$(python3 -c "
+          import json, sys
+          from datetime import datetime, timezone
+          try:
+              d = json.load(open('data.json', encoding='utf-8'))
+              t = datetime.fromisoformat(d['generated_at'])
+          except Exception as e:
+              print(f'BROKEN: {e}', file=sys.stderr); sys.exit(2)
+          age = (datetime.now(timezone.utc) - t).total_seconds() / 60
+          print(int(age))
+          ")
+          echo "data.json age: ${gen} minutes"
+          if [ "$gen" -gt 120 ]; then
+            echo "::error::data.json is ${gen} minutes old (>120) during market hours — the engine is down"
+            exit 1
+          fi
