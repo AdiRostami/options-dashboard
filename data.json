@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated_at": "2026-08-26T23:00:06+03:00",
+ "generated_at": "2026-08-27T11:39:25+03:00",
  "start_date": "2026-08-10",
  "initial_capital": 100000,
  "staleness": {
@@ -37,13 +37,18 @@
   },
   {
    "label": "ממוצע שבועי (יעד 0.5%)",
-   "value": "+0.93%",
+   "value": "+0.88%",
    "tone": "pos"
   },
   {
-   "label": "רווח ממומש",
-   "value": "$2,128",
+   "label": "רווח ממומש (נטו)",
+   "value": "$1,980",
    "tone": "pos"
+  },
+  {
+   "label": "עמלות מצטברות",
+   "value": "−$149",
+   "tone": "neutral"
   },
   {
    "label": "אחוז עסקאות מרוויחות",
@@ -54,7 +59,7 @@
  "summary": {
   "wins": [
    "תשואה כוללת +2.15% ($+2,146) מאז תחילת הפעילות",
-   "23 מתוך 26 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+2,128): 8 פקעו חסרות ערך, 15 נסגרו בלקיחת רווח אוטומטית",
+   "23 מתוך 26 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+1,980): 8 פקעו חסרות ערך, 15 נסגרו בלקיחת רווח אוטומטית",
    "1 מתוך 2 שבועות מלאים עמדו ביעד של 0.5%"
   ],
   "losses": [
@@ -427,6 +432,11 @@
  ],
  "activity_log": [
   {
+   "time": "2026-08-27 11:38",
+   "action": "FEES-BACKFILL",
+   "detail": "retroactive commissions $0.65/contract on 229 legs (153 sold + 76 bought back) = $148.85; cash 104053.50 -> 103904.65. Backup: options.db.bak-20260827"
+  },
+  {
    "time": "2026-08-25 20:00",
    "action": "SELL-CSP",
    "detail": "MARA 11.0 exp 2026-09-04 x16 credit 0.33 (delta 0.28, wk-yield 2.20%)"
@@ -570,11 +580,6 @@
    "time": "2026-08-19 18:47",
    "action": "CLOSE-CSP",
    "detail": "PYPL 58.0 exp 2026-08-21 x1 debit 0.02 (take profit) pnl $31"
-  },
-  {
-   "time": "2026-08-19 18:47",
-   "action": "CLOSE-CSP",
-   "detail": "INTC 99.0 exp 2026-08-21 x1 debit 6.17 (stop loss) pnl $-465"
   }
  ]
 }
