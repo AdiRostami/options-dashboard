@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated_at": "2026-08-28T23:00:06+03:00",
+ "generated_at": "2026-08-29T10:00:05+03:00",
  "start_date": "2026-08-10",
  "initial_capital": 100000,
  "staleness": {
@@ -27,22 +27,22 @@
  "kpis": [
   {
    "label": "שווי תיק",
-   "value": "$101,703",
+   "value": "$101,721",
    "tone": "neutral"
   },
   {
    "label": "תשואה כוללת",
-   "value": "+1.70%",
+   "value": "+1.72%",
    "tone": "pos"
   },
   {
    "label": "ממוצע שבועי (יעד 0.5%)",
-   "value": "+0.66%",
+   "value": "+0.63%",
    "tone": "pos"
   },
   {
    "label": "רווח ממומש (נטו)",
-   "value": "$1,980",
+   "value": "$2,671",
    "tone": "pos"
   },
   {
@@ -52,26 +52,25 @@
   },
   {
    "label": "אחוז עסקאות מרוויחות",
-   "value": "88%",
+   "value": "90%",
    "tone": "neutral"
   }
  ],
  "summary": {
   "wins": [
-   "תשואה כוללת +1.70% ($+1,703) מאז תחילת הפעילות",
-   "23 מתוך 26 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+1,980): 8 פקעו חסרות ערך, 15 נסגרו בלקיחת רווח אוטומטית",
+   "תשואה כוללת +1.72% ($+1,721) מאז תחילת הפעילות",
+   "27 מתוך 30 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+2,671): 12 פקעו חסרות ערך, 15 נסגרו בלקיחת רווח אוטומטית",
    "1 מתוך 2 שבועות מלאים עמדו ביעד של 0.5%"
   ],
   "losses": [
    "3 עסקאות נעצרו בסטופ-לוס ($-1,404)",
-   "1 שבועות שליליים; הגרוע ביותר 2026-W35: -0.02%"
+   "1 שבועות שליליים; הגרוע ביותר 2026-W35: -0.00%"
   ],
   "risks": [
    "MARA (סטרייק 11, פקיעה 2026-09-04): האופציה במחיר פי 2.0 מהפרמיה שנגבתה — סטופ בפי 3",
    "RIOT (סטרייק 19.5, פקיעה 2026-09-04): האופציה במחיר פי 1.6 מהפרמיה שנגבתה — סטופ בפי 3",
-   "RIVN (סטרייק 16, פקיעה 2026-09-04): האופציה במחיר פי 1.5 מהפרמיה שנגבתה — סטופ בפי 3",
    "הפוזיציה הגדולה: RIOT עם ביטחונות של $19,500 (20% מההון)",
-   "ניצול הון: 89% ($89,350 ביטחונות ומניות)",
+   "ניצול הון: 40% ($40,300 ביטחונות ומניות)",
    "סיכון מובנה קבוע: מכירת PUT מרוויחה לאט ומפסידה מהר — שבוע של ירידה חדה בשוק יפגע בכמה פוזיציות בו-זמנית, וסטופ לא מגן מפני פתיחה בגאפ. התוצאות כאן ללא עמלות וללא slippage"
   ]
  },
@@ -91,7 +90,8 @@
    "2026-08-25",
    "2026-08-26",
    "2026-08-27",
-   "2026-08-28"
+   "2026-08-28",
+   "2026-08-29"
   ],
   "portfolio": [
    100188.0,
@@ -108,7 +108,8 @@
    102417.0,
    102146.0,
    102990.0,
-   101703.0
+   101703.0,
+   101721.0
   ],
   "target": [
    100000.0,
@@ -125,13 +126,14 @@
    101074.0,
    101147.0,
    101219.0,
-   101291.0
+   101291.0,
+   101363.0
   ]
  },
  "weekly": [
   {
    "week": "2026-W35",
-   "actual": "-0.02%",
+   "actual": "-0.00%",
    "target": "0.5%"
   },
   {
@@ -143,53 +145,13 @@
  "open_positions": [
   {
    "type": "PUT מגובה מזומן",
-   "symbol": "COIN",
-   "strike": 177.5,
-   "expiry": "2026-08-28",
-   "qty": 1,
-   "premium": 2.85,
-   "current": 0.125,
-   "opened": "2026-08-24"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "INTC",
-   "strike": 84.0,
-   "expiry": "2026-08-28",
-   "qty": 2,
-   "premium": 0.99,
-   "current": 0.01,
-   "opened": "2026-08-24"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "MARA",
-   "strike": 10.5,
-   "expiry": "2026-08-28",
-   "qty": 2,
-   "premium": 0.11,
-   "current": 0.01,
-   "opened": "2026-08-24"
-  },
-  {
-   "type": "PUT מגובה מזומן",
    "symbol": "MARA",
    "strike": 11.0,
    "expiry": "2026-09-04",
    "qty": 16,
    "premium": 0.33,
-   "current": 0.655,
+   "current": 0.665,
    "opened": "2026-08-25"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "NOW",
-   "strike": 124.0,
-   "expiry": "2026-08-28",
-   "qty": 1,
-   "premium": 1.86,
-   "current": 0.01,
-   "opened": "2026-08-24"
   },
   {
    "type": "PUT מגובה מזומן",
@@ -198,7 +160,7 @@
    "expiry": "2026-09-04",
    "qty": 10,
    "premium": 0.65,
-   "current": 1.05,
+   "current": 1.04,
    "opened": "2026-08-25"
   },
   {
@@ -208,11 +170,47 @@
    "expiry": "2026-09-04",
    "qty": 2,
    "premium": 0.28,
-   "current": 0.43,
+   "current": 0.4,
    "opened": "2026-08-25"
   }
  ],
  "closed_trades": [
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "MARA",
+   "strike": 10.5,
+   "expiry": "2026-08-28",
+   "reason": "expired worthless",
+   "pnl": 22,
+   "closed": "2026-08-29"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "INTC",
+   "strike": 84.0,
+   "expiry": "2026-08-28",
+   "reason": "expired worthless",
+   "pnl": 198,
+   "closed": "2026-08-29"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "NOW",
+   "strike": 124.0,
+   "expiry": "2026-08-28",
+   "reason": "expired worthless",
+   "pnl": 186,
+   "closed": "2026-08-29"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "COIN",
+   "strike": 177.5,
+   "expiry": "2026-08-28",
+   "reason": "expired worthless",
+   "pnl": 285,
+   "closed": "2026-08-29"
+  },
   {
    "type": "PUT מגובה מזומן",
    "symbol": "SNAP",
@@ -401,45 +399,29 @@
    "reason": "take profit",
    "pnl": 110,
    "closed": "2026-08-14"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "CCL",
-   "strike": 26.5,
-   "expiry": "2026-08-21",
-   "reason": "take profit",
-   "pnl": 40,
-   "closed": "2026-08-14"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "SNAP",
-   "strike": 5.0,
-   "expiry": "2026-08-21",
-   "reason": "take profit",
-   "pnl": 11,
-   "closed": "2026-08-14"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "RIVN",
-   "strike": 15.5,
-   "expiry": "2026-08-14",
-   "reason": "take profit",
-   "pnl": 46,
-   "closed": "2026-08-12"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "HOOD",
-   "strike": 89.0,
-   "expiry": "2026-08-14",
-   "reason": "take profit",
-   "pnl": 172,
-   "closed": "2026-08-12"
   }
  ],
  "activity_log": [
+  {
+   "time": "2026-08-29 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "MARA 10.5 exp 2026-08-28 x2 debit 0.00 (expired worthless) pnl $22"
+  },
+  {
+   "time": "2026-08-29 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "INTC 84.0 exp 2026-08-28 x2 debit 0.00 (expired worthless) pnl $198"
+  },
+  {
+   "time": "2026-08-29 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "COIN 177.5 exp 2026-08-28 x1 debit 0.00 (expired worthless) pnl $285"
+  },
+  {
+   "time": "2026-08-29 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "NOW 124.0 exp 2026-08-28 x1 debit 0.00 (expired worthless) pnl $186"
+  },
   {
    "time": "2026-08-27 11:38",
    "action": "FEES-BACKFILL",
@@ -569,26 +551,6 @@
    "time": "2026-08-20 21:30",
    "action": "SELL-CSP",
    "detail": "MARA 10.0 exp 2026-08-28 x19 credit 0.22 (delta 0.23, wk-yield 2.01%)"
-  },
-  {
-   "time": "2026-08-20 21:30",
-   "action": "CLOSE-CSP",
-   "detail": "MARA 9.0 exp 2026-08-28 x22 debit 0.06 (take profit) pnl $429"
-  },
-  {
-   "time": "2026-08-19 18:48",
-   "action": "SELL-CSP",
-   "detail": "MARA 9.0 exp 2026-08-28 x22 credit 0.25 (delta 0.26, wk-yield 2.20%)"
-  },
-  {
-   "time": "2026-08-19 18:48",
-   "action": "SELL-CSP",
-   "detail": "INTC 90.0 exp 2026-08-24 x1 credit 1.13 (delta 0.28, wk-yield 1.87%)"
-  },
-  {
-   "time": "2026-08-19 18:47",
-   "action": "CLOSE-CSP",
-   "detail": "PYPL 58.0 exp 2026-08-21 x1 debit 0.02 (take profit) pnl $31"
   }
  ]
 }
