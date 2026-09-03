@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated_at": "2026-09-03T18:31:09+03:00",
+ "generated_at": "2026-09-03T20:00:50+03:00",
  "start_date": "2026-08-10",
  "initial_capital": 100000,
  "staleness": {
@@ -27,27 +27,27 @@
  "kpis": [
   {
    "label": "שווי תיק",
-   "value": "$101,951",
+   "value": "$102,041",
    "tone": "neutral"
   },
   {
    "label": "תשואה כוללת",
-   "value": "+1.95%",
+   "value": "+2.04%",
    "tone": "pos"
   },
   {
    "label": "ממוצע שבועי (יעד 0.5%)",
-   "value": "+0.57%",
+   "value": "+0.59%",
    "tone": "pos"
   },
   {
    "label": "רווח ממומש (נטו)",
-   "value": "$1,101",
+   "value": "$1,347",
    "tone": "pos"
   },
   {
    "label": "עמלות מצטברות",
-   "value": "−$191",
+   "value": "−$196",
    "tone": "neutral"
   },
   {
@@ -58,8 +58,8 @@
  ],
  "summary": {
   "wins": [
-   "תשואה כוללת +1.95% ($+1,951) מאז תחילת הפעילות",
-   "32 מתוך 36 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+1,101): 12 פקעו חסרות ערך, 20 נסגרו בלקיחת רווח אוטומטית",
+   "תשואה כוללת +2.04% ($+2,041) מאז תחילת הפעילות",
+   "33 מתוך 37 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+1,347): 12 פקעו חסרות ערך, 21 נסגרו בלקיחת רווח אוטומטית",
    "1 מתוך 3 שבועות מלאים עמדו ביעד של 0.5%"
   ],
   "losses": [
@@ -67,9 +67,9 @@
    "1 שבועות שליליים; הגרוע ביותר 2026-W35: -0.00%"
   ],
   "risks": [
-   "SNAP (סטרייק 5.5, פקיעה 2026-09-11): האופציה במחיר פי 1.6 מהפרמיה שנגבתה — סטופ בפי 3",
+   "SNAP (סטרייק 5.5, פקיעה 2026-09-11): האופציה במחיר פי 1.7 מהפרמיה שנגבתה — סטופ בפי 3",
    "הפוזיציה הגדולה: MARA עם ביטחונות של $17,600 (18% מההון)",
-   "ניצול הון: 90% ($90,000 ביטחונות ומניות)",
+   "ניצול הון: 90% ($89,950 ביטחונות ומניות)",
    "סיכון מובנה קבוע: מכירת PUT מרוויחה לאט ומפסידה מהר — שבוע של ירידה חדה בשוק יפגע בכמה פוזיציות בו-זמנית, וסטופ לא מגן מפני פתיחה בגאפ. התוצאות כאן ללא עמלות וללא slippage"
   ]
  },
@@ -116,7 +116,7 @@
    102050.0,
    101020.0,
    100503.0,
-   101951.0
+   102041.0
   ],
   "target": [
    100000.0,
@@ -144,7 +144,7 @@
  "weekly": [
   {
    "week": "2026-W36",
-   "actual": "+0.23%",
+   "actual": "+0.32%",
    "target": "0.5%"
   },
   {
@@ -161,13 +161,13 @@
  "open_positions": [
   {
    "type": "PUT מגובה מזומן",
-   "symbol": "COIN",
-   "strike": 167.5,
+   "symbol": "AFRM",
+   "strike": 71.0,
    "expiry": "2026-09-11",
    "qty": 1,
-   "premium": 3.1,
-   "current": 0.7649999999999999,
-   "opened": "2026-09-02"
+   "premium": 0.88,
+   "current": 0.95,
+   "opened": "2026-09-03"
   },
   {
    "type": "PUT מגובה מזומן",
@@ -176,8 +176,18 @@
    "expiry": "2026-09-04",
    "qty": 6,
    "premium": 0.28,
-   "current": 0.07,
+   "current": 0.060000000000000005,
    "opened": "2026-08-31"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "DKNG",
+   "strike": 23.5,
+   "expiry": "2026-09-11",
+   "qty": 1,
+   "premium": 0.3,
+   "current": 0.31,
+   "opened": "2026-09-03"
   },
   {
    "type": "PUT מגובה מזומן",
@@ -191,12 +201,22 @@
   },
   {
    "type": "PUT מגובה מזומן",
+   "symbol": "F",
+   "strike": 14.0,
+   "expiry": "2026-09-11",
+   "qty": 1,
+   "premium": 0.11,
+   "current": 0.11499999999999999,
+   "opened": "2026-09-03"
+  },
+  {
+   "type": "PUT מגובה מזומן",
    "symbol": "INTC",
    "strike": 86.0,
    "expiry": "2026-09-11",
    "qty": 2,
    "premium": 1.52,
-   "current": 1.17,
+   "current": 0.965,
    "opened": "2026-09-02"
   },
   {
@@ -206,7 +226,7 @@
    "expiry": "2026-09-04",
    "qty": 16,
    "premium": 0.33,
-   "current": 0.065,
+   "current": 0.07500000000000001,
    "opened": "2026-08-25"
   },
   {
@@ -216,7 +236,7 @@
    "expiry": "2026-09-11",
    "qty": 2,
    "premium": 0.26,
-   "current": 0.275,
+   "current": 0.315,
    "opened": "2026-09-03"
   },
   {
@@ -226,7 +246,17 @@
    "expiry": "2026-09-11",
    "qty": 7,
    "premium": 0.37,
-   "current": 0.38,
+   "current": 0.27,
+   "opened": "2026-09-03"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "RIOT",
+   "strike": 19.5,
+   "expiry": "2026-09-11",
+   "qty": 3,
+   "premium": 0.4,
+   "current": 0.41500000000000004,
    "opened": "2026-09-03"
   },
   {
@@ -236,7 +266,7 @@
    "expiry": "2026-09-04",
    "qty": 2,
    "premium": 0.28,
-   "current": 0.27,
+   "current": 0.30000000000000004,
    "opened": "2026-08-25"
   },
   {
@@ -256,7 +286,7 @@
    "expiry": "2026-09-11",
    "qty": 2,
    "premium": 0.05,
-   "current": 0.08,
+   "current": 0.08499999999999999,
    "opened": "2026-09-03"
   },
   {
@@ -266,7 +296,7 @@
    "expiry": "2026-09-11",
    "qty": 3,
    "premium": 0.07,
-   "current": 0.08,
+   "current": 0.08499999999999999,
    "opened": "2026-09-03"
   }
  ],
@@ -287,6 +317,15 @@
    "expiry": "2026-09-11",
    "reason": "take profit",
    "pnl": 23,
+   "closed": "2026-09-03"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "COIN",
+   "strike": 167.5,
+   "expiry": "2026-09-11",
+   "reason": "take profit",
+   "pnl": 250,
    "closed": "2026-09-03"
   },
   {
@@ -486,18 +525,34 @@
    "reason": "take profit",
    "pnl": 31,
    "closed": "2026-08-19"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "INTC",
-   "strike": 99.0,
-   "expiry": "2026-08-21",
-   "reason": "stop loss",
-   "pnl": -465,
-   "closed": "2026-08-19"
   }
  ],
  "activity_log": [
+  {
+   "time": "2026-09-03 20:00",
+   "action": "SELL-CSP",
+   "detail": "RIOT 19.5 exp 2026-09-11 x3 credit 0.40 (delta 0.26, wk-yield 1.86%)"
+  },
+  {
+   "time": "2026-09-03 20:00",
+   "action": "SELL-CSP",
+   "detail": "AFRM 71.0 exp 2026-09-11 x1 credit 0.88 (delta 0.28, wk-yield 1.17%)"
+  },
+  {
+   "time": "2026-09-03 20:00",
+   "action": "SELL-CSP",
+   "detail": "DKNG 23.5 exp 2026-09-11 x1 credit 0.30 (delta 0.27, wk-yield 1.15%)"
+  },
+  {
+   "time": "2026-09-03 20:00",
+   "action": "SELL-CSP",
+   "detail": "F 14.0 exp 2026-09-11 x1 credit 0.11 (delta 0.24, wk-yield 0.72%)"
+  },
+  {
+   "time": "2026-09-03 20:00",
+   "action": "CLOSE-CSP",
+   "detail": "COIN 167.5 exp 2026-09-11 x1 debit 0.60 (take profit) pnl $249"
+  },
   {
    "time": "2026-09-03 18:31",
    "action": "SELL-CSP",
@@ -622,31 +677,6 @@
    "time": "2026-08-27 11:38",
    "action": "FEES-BACKFILL",
    "detail": "retroactive commissions $0.65/contract on 229 legs (153 sold + 76 bought back) = $148.85; cash 104053.50 -> 103904.65. Backup: options.db.bak-20260827"
-  },
-  {
-   "time": "2026-08-25 20:00",
-   "action": "SELL-CSP",
-   "detail": "MARA 11.0 exp 2026-09-04 x16 credit 0.33 (delta 0.28, wk-yield 2.20%)"
-  },
-  {
-   "time": "2026-08-25 20:00",
-   "action": "SELL-CSP",
-   "detail": "RIVN 16.0 exp 2026-09-04 x2 credit 0.28 (delta 0.27, wk-yield 1.29%)"
-  },
-  {
-   "time": "2026-08-25 20:00",
-   "action": "CLOSE-CSP",
-   "detail": "MARA 10.0 exp 2026-08-28 x1 debit 0.03 (take profit) pnl $8"
-  },
-  {
-   "time": "2026-08-25 20:00",
-   "action": "CLOSE-CSP",
-   "detail": "HOOD 99.0 exp 2026-08-28 x1 debit 0.17 (take profit) pnl $104"
-  },
-  {
-   "time": "2026-08-25 20:00",
-   "action": "CLOSE-CSP",
-   "detail": "HOOD 101.0 exp 2026-08-28 x1 debit 0.29 (take profit) pnl $156"
   }
  ]
 }
