@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated_at": "2026-09-04T23:00:50+03:00",
+ "generated_at": "2026-09-05T10:00:06+03:00",
  "start_date": "2026-08-10",
  "initial_capital": 100000,
  "staleness": {
@@ -27,7 +27,7 @@
  "kpis": [
   {
    "label": "שווי תיק",
-   "value": "$102,449",
+   "value": "$102,450",
    "tone": "neutral"
   },
   {
@@ -37,12 +37,12 @@
   },
   {
    "label": "ממוצע שבועי (יעד 0.5%)",
-   "value": "+0.68%",
+   "value": "+0.65%",
    "tone": "pos"
   },
   {
    "label": "רווח ממומש (נטו)",
-   "value": "$1,559",
+   "value": "$2,327",
    "tone": "pos"
   },
   {
@@ -52,24 +52,26 @@
   },
   {
    "label": "אחוז עסקאות מרוויחות",
-   "value": "88%",
+   "value": "89%",
    "tone": "neutral"
   }
  ],
  "summary": {
   "wins": [
-   "תשואה כוללת +2.45% ($+2,449) מאז תחילת הפעילות",
-   "35 מתוך 40 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+1,559): 12 פקעו חסרות ערך, 23 נסגרו בלקיחת רווח אוטומטית",
+   "תשואה כוללת +2.45% ($+2,450) מאז תחילת הפעילות",
+   "39 מתוך 44 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+2,327): 15 פקעו חסרות ערך, 23 נסגרו בלקיחת רווח אוטומטית",
    "2 מתוך 3 שבועות מלאים עמדו ביעד של 0.5%"
   ],
   "losses": [
    "5 עסקאות נעצרו בסטופ-לוס ($-3,536)",
+   "1 פוזיציות PUT הוקצו — התקבלו מניות והמערכת מוכרת עליהן CALL מכוסה (חלק מהאסטרטגיה, לא תקלה)",
    "1 שבועות שליליים; הגרוע ביותר 2026-W35: -0.00%"
   ],
   "risks": [
-   "SNAP (סטרייק 5.5, פקיעה 2026-09-11): האופציה במחיר פי 2.3 מהפרמיה שנגבתה — סטופ בפי 3",
-   "הפוזיציה הגדולה: MARA עם ביטחונות של $17,600 (18% מההון)",
-   "ניצול הון: 89% ($88,850 ביטחונות ומניות)",
+   "SNAP (סטרייק 5.5, פקיעה 2026-09-11): האופציה במחיר פי 2.2 מהפרמיה שנגבתה — סטופ בפי 3",
+   "הפוזיציה הגדולה: RIOT עם ביטחונות של $13,300 (13% מההון)",
+   "ניצול הון: 56% ($55,544 ביטחונות ומניות)",
+   "מניות בתיק מהקצאה: RIVN (200 יח' בבסיס 15.72)",
    "סיכון מובנה קבוע: מכירת PUT מרוויחה לאט ומפסידה מהר — שבוע של ירידה חדה בשוק יפגע בכמה פוזיציות בו-זמנית, וסטופ לא מגן מפני פתיחה בגאפ. התוצאות כאן ללא עמלות וללא slippage"
   ]
  },
@@ -95,7 +97,8 @@
    "2026-09-01",
    "2026-09-02",
    "2026-09-03",
-   "2026-09-04"
+   "2026-09-04",
+   "2026-09-05"
   ],
   "portfolio": [
    100188.0,
@@ -118,7 +121,8 @@
    101020.0,
    100503.0,
    102249.0,
-   102449.0
+   102449.0,
+   102450.0
   ],
   "target": [
    100000.0,
@@ -141,7 +145,8 @@
    101580.0,
    101652.0,
    101725.0,
-   101797.0
+   101797.0,
+   101870.0
   ]
  },
  "weekly": [
@@ -169,18 +174,8 @@
    "expiry": "2026-09-11",
    "qty": 1,
    "premium": 0.88,
-   "current": 1.2000000000000002,
+   "current": 1.3,
    "opened": "2026-09-03"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "DKNG",
-   "strike": 23.5,
-   "expiry": "2026-09-04",
-   "qty": 6,
-   "premium": 0.28,
-   "current": 0.01,
-   "opened": "2026-08-31"
   },
   {
    "type": "PUT מגובה מזומן",
@@ -189,7 +184,7 @@
    "expiry": "2026-09-11",
    "qty": 1,
    "premium": 0.3,
-   "current": 0.32999999999999996,
+   "current": 0.365,
    "opened": "2026-09-03"
   },
   {
@@ -199,7 +194,7 @@
    "expiry": "2026-09-11",
    "qty": 1,
    "premium": 0.11,
-   "current": 0.055,
+   "current": 0.045,
    "opened": "2026-09-03"
   },
   {
@@ -209,18 +204,8 @@
    "expiry": "2026-09-11",
    "qty": 1,
    "premium": 2.0,
-   "current": 2.035,
+   "current": 2.13,
    "opened": "2026-09-04"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "MARA",
-   "strike": 11.0,
-   "expiry": "2026-09-04",
-   "qty": 16,
-   "premium": 0.33,
-   "current": 0.01,
-   "opened": "2026-08-25"
   },
   {
    "type": "PUT מגובה מזומן",
@@ -229,7 +214,7 @@
    "expiry": "2026-09-11",
    "qty": 2,
    "premium": 0.26,
-   "current": 0.345,
+   "current": 0.325,
    "opened": "2026-09-03"
   },
   {
@@ -249,28 +234,8 @@
    "expiry": "2026-09-11",
    "qty": 3,
    "premium": 0.4,
-   "current": 0.16999999999999998,
+   "current": 0.165,
    "opened": "2026-09-03"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "RIVN",
-   "strike": 16.0,
-   "expiry": "2026-09-04",
-   "qty": 2,
-   "premium": 0.28,
-   "current": 0.225,
-   "opened": "2026-08-25"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "RIVN",
-   "strike": 15.5,
-   "expiry": "2026-09-04",
-   "qty": 1,
-   "premium": 0.16,
-   "current": 0.01,
-   "opened": "2026-08-31"
   },
   {
    "type": "PUT מגובה מזומן",
@@ -289,7 +254,7 @@
    "expiry": "2026-09-11",
    "qty": 3,
    "premium": 0.07,
-   "current": 0.16,
+   "current": 0.155,
    "opened": "2026-09-03"
   },
   {
@@ -301,9 +266,55 @@
    "premium": 0.17,
    "current": 0.155,
    "opened": "2026-09-04"
+  },
+  {
+   "type": "מניות",
+   "symbol": "RIVN",
+   "strike": null,
+   "expiry": null,
+   "qty": 200,
+   "premium": 15.72,
+   "current": null,
+   "opened": "2026-09-05"
   }
  ],
  "closed_trades": [
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "RIVN",
+   "strike": 15.5,
+   "expiry": "2026-09-04",
+   "reason": "expired worthless",
+   "pnl": 16,
+   "closed": "2026-09-05"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "DKNG",
+   "strike": 23.5,
+   "expiry": "2026-09-04",
+   "reason": "expired worthless",
+   "pnl": 168,
+   "closed": "2026-09-05"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "RIVN",
+   "strike": 16.0,
+   "expiry": "2026-09-04",
+   "reason": "assigned",
+   "pnl": 56,
+   "closed": "2026-09-05"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "MARA",
+   "strike": 11.0,
+   "expiry": "2026-09-04",
+   "reason": "expired worthless",
+   "pnl": 528,
+   "closed": "2026-09-05"
+  },
   {
    "type": "PUT מגובה מזומן",
    "symbol": "SNAP",
@@ -492,45 +503,29 @@
    "reason": "stop loss",
    "pnl": -287,
    "closed": "2026-08-24"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "PLTR",
-   "strike": 167.5,
-   "expiry": "2026-08-21",
-   "reason": "expired worthless",
-   "pnl": 147,
-   "closed": "2026-08-22"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "HOOD",
-   "strike": 92.0,
-   "expiry": "2026-08-21",
-   "reason": "expired worthless",
-   "pnl": 194,
-   "closed": "2026-08-22"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "RIVN",
-   "strike": 15.0,
-   "expiry": "2026-08-21",
-   "reason": "expired worthless",
-   "pnl": 64,
-   "closed": "2026-08-22"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "SNAP",
-   "strike": 5.0,
-   "expiry": "2026-08-21",
-   "reason": "expired worthless",
-   "pnl": 10,
-   "closed": "2026-08-22"
   }
  ],
  "activity_log": [
+  {
+   "time": "2026-09-05 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "MARA 11.0 exp 2026-09-04 x16 debit 0.00 (expired worthless) pnl $528"
+  },
+  {
+   "time": "2026-09-05 10:00",
+   "action": "ASSIGNED",
+   "detail": "RIVN: bought 200 @ 16.00 (basis 15.72 after premium)"
+  },
+  {
+   "time": "2026-09-05 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "DKNG 23.5 exp 2026-09-04 x6 debit 0.00 (expired worthless) pnl $168"
+  },
+  {
+   "time": "2026-09-05 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "RIVN 15.5 exp 2026-09-04 x1 debit 0.00 (expired worthless) pnl $16"
+  },
   {
    "time": "2026-09-04 20:00",
    "action": "CLOSE-CSP",
@@ -660,26 +655,6 @@
    "time": "2026-09-02 17:00",
    "action": "SELL-CSP",
    "detail": "F 13.5 exp 2026-09-11 x1 credit 0.09 (delta 0.24, wk-yield 0.58%)"
-  },
-  {
-   "time": "2026-09-02 17:00",
-   "action": "CLOSE-CSP",
-   "detail": "RIOT 19.5 exp 2026-09-04 x10 debit 2.76 (stop loss) pnl $-2,116"
-  },
-  {
-   "time": "2026-08-31 17:01",
-   "action": "SELL-CSP",
-   "detail": "AFRM 69.0 exp 2026-09-04 x2 credit 0.81 (delta 0.22, wk-yield 2.33%)"
-  },
-  {
-   "time": "2026-08-31 17:01",
-   "action": "SELL-CSP",
-   "detail": "HOOD 98.0 exp 2026-09-04 x2 credit 1.17 (delta 0.27, wk-yield 2.16%)"
-  },
-  {
-   "time": "2026-08-31 17:01",
-   "action": "SELL-CSP",
-   "detail": "DKNG 23.5 exp 2026-09-04 x6 credit 0.28 (delta 0.26, wk-yield 2.16%)"
   }
  ]
 }
