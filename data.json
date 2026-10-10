@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated_at": "2026-10-09T23:00:44+03:00",
+ "generated_at": "2026-10-10T10:00:05+03:00",
  "start_date": "2026-08-10",
  "initial_capital": 100000,
  "staleness": {
@@ -27,12 +27,12 @@
  "kpis": [
   {
    "label": "שווי תיק",
-   "value": "$100,927",
+   "value": "$100,936",
    "tone": "neutral"
   },
   {
    "label": "תשואה כוללת",
-   "value": "+0.93%",
+   "value": "+0.94%",
    "tone": "pos"
   },
   {
@@ -42,7 +42,7 @@
   },
   {
    "label": "רווח ממומש (נטו)",
-   "value": "$2,266",
+   "value": "$2,886",
    "tone": "pos"
   },
   {
@@ -52,14 +52,14 @@
   },
   {
    "label": "אחוז עסקאות מרוויחות",
-   "value": "77%",
+   "value": "78%",
    "tone": "neutral"
   }
  ],
  "summary": {
   "wins": [
-   "תשואה כוללת +0.93% ($+927) מאז תחילת הפעילות",
-   "82 מתוך 106 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+2,266): 28 פקעו חסרות ערך, 47 נסגרו בלקיחת רווח אוטומטית",
+   "תשואה כוללת +0.94% ($+936) מאז תחילת הפעילות",
+   "87 מתוך 111 עסקאות שנסגרו הסתיימו ברווח (סה\"כ ממומש $+2,886): 32 פקעו חסרות ערך, 47 נסגרו בלקיחת רווח אוטומטית",
    "3 מתוך 8 שבועות מלאים עמדו ביעד של 0.5%"
   ],
   "losses": [
@@ -68,9 +68,9 @@
    "3 שבועות שליליים; הגרוע ביותר 2026-W40: -2.43%"
   ],
   "risks": [
-   "הפוזיציה הגדולה: AFRM עם ביטחונות של $14,400 (14% מההון)",
-   "ניצול הון: 91% ($91,023 ביטחונות ומניות)",
-   "מניות בתיק מהקצאה: CCL (300 יח' בבסיס 21.76), PYPL (100 יח' בבסיס 52.15), RIOT (300 יח' בבסיס 23.14), RIVN (200 יח' בבסיס 15.72), RIVN (1000 יח' בבסיס 14.74), SOFI (100 יח' בבסיס 16.78), SOFI (100 יח' בבסיס 16.76)",
+   "הפוזיציה הגדולה: RIOT עם ביטחונות של $6,400 (6% מההון)",
+   "ניצול הון: 46% ($45,995 ביטחונות ומניות)",
+   "מניות בתיק מהקצאה: PYPL (100 יח' בבסיס 52.15), RIOT (300 יח' בבסיס 23.14), RIVN (200 יח' בבסיס 15.72), RIVN (1000 יח' בבסיס 14.74), SOFI (100 יח' בבסיס 16.78), SOFI (100 יח' בבסיס 16.76)",
    "סיכון מובנה קבוע: מכירת PUT מרוויחה לאט ומפסידה מהר — שבוע של ירידה חדה בשוק יפגע בכמה פוזיציות בו-זמנית, וסטופ לא מגן מפני פתיחה בגאפ. התוצאות כאן ללא עמלות וללא slippage"
   ]
  },
@@ -125,7 +125,8 @@
    "2026-10-06",
    "2026-10-07",
    "2026-10-08",
-   "2026-10-09"
+   "2026-10-09",
+   "2026-10-10"
   ],
   "portfolio": [
    100188.0,
@@ -177,7 +178,8 @@
    102019.0,
    101675.0,
    100961.0,
-   100927.0
+   100927.0,
+   100936.0
   ],
   "target": [
    100000.0,
@@ -229,13 +231,14 @@
    104145.0,
    104219.0,
    104293.0,
-   104368.0
+   104368.0,
+   104442.0
   ]
  },
  "weekly": [
   {
    "week": "2026-W41",
-   "actual": "-0.46%",
+   "actual": "-0.45%",
    "target": "0.5%"
   },
   {
@@ -277,26 +280,6 @@
  "open_positions": [
   {
    "type": "CALL מכוסה",
-   "symbol": "CCL",
-   "strike": 26.0,
-   "expiry": "2026-10-09",
-   "qty": 3,
-   "premium": 0.38,
-   "current": 0.33499999999999996,
-   "opened": "2026-09-29"
-  },
-  {
-   "type": "CALL מכוסה",
-   "symbol": "PYPL",
-   "strike": 56.0,
-   "expiry": "2026-10-09",
-   "qty": 1,
-   "premium": 0.58,
-   "current": 0.01,
-   "opened": "2026-09-29"
-  },
-  {
-   "type": "CALL מכוסה",
    "symbol": "RIVN",
    "strike": 15.0,
    "expiry": "2026-10-16",
@@ -307,42 +290,12 @@
   },
   {
    "type": "PUT מגובה מזומן",
-   "symbol": "AFRM",
-   "strike": 72.0,
-   "expiry": "2026-10-09",
-   "qty": 2,
-   "premium": 0.65,
-   "current": 0.11,
-   "opened": "2026-10-05"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "HOOD",
-   "strike": 108.0,
-   "expiry": "2026-10-09",
-   "qty": 1,
-   "premium": 1.78,
-   "current": 0.01,
-   "opened": "2026-10-01"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "NOW",
-   "strike": 133.0,
-   "expiry": "2026-10-09",
-   "qty": 1,
-   "premium": 1.4,
-   "current": 0.01,
-   "opened": "2026-10-05"
-  },
-  {
-   "type": "PUT מגובה מזומן",
    "symbol": "RIOT",
    "strike": 16.0,
    "expiry": "2026-10-16",
    "qty": 1,
    "premium": 0.25,
-   "current": 0.275,
+   "current": 0.28500000000000003,
    "opened": "2026-10-08"
   },
   {
@@ -352,7 +305,7 @@
    "expiry": "2026-10-16",
    "qty": 2,
    "premium": 0.3,
-   "current": 0.275,
+   "current": 0.28500000000000003,
    "opened": "2026-10-09"
   },
   {
@@ -362,7 +315,7 @@
    "expiry": "2026-10-16",
    "qty": 4,
    "premium": 0.3,
-   "current": 0.275,
+   "current": 0.28500000000000003,
    "opened": "2026-10-09"
   },
   {
@@ -372,18 +325,8 @@
    "expiry": "2026-10-16",
    "qty": 1,
    "premium": 0.24,
-   "current": 0.33999999999999997,
+   "current": 0.345,
    "opened": "2026-10-06"
-  },
-  {
-   "type": "מניות",
-   "symbol": "CCL",
-   "strike": null,
-   "expiry": null,
-   "qty": 300,
-   "premium": 21.76,
-   "current": null,
-   "opened": "2026-09-19"
   },
   {
    "type": "מניות",
@@ -447,6 +390,51 @@
   }
  ],
  "closed_trades": [
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "AFRM",
+   "strike": 72.0,
+   "expiry": "2026-10-09",
+   "reason": "expired worthless",
+   "pnl": 130,
+   "closed": "2026-10-10"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "NOW",
+   "strike": 133.0,
+   "expiry": "2026-10-09",
+   "reason": "expired worthless",
+   "pnl": 140,
+   "closed": "2026-10-10"
+  },
+  {
+   "type": "PUT מגובה מזומן",
+   "symbol": "HOOD",
+   "strike": 108.0,
+   "expiry": "2026-10-09",
+   "reason": "expired worthless",
+   "pnl": 178,
+   "closed": "2026-10-10"
+  },
+  {
+   "type": "CALL מכוסה",
+   "symbol": "PYPL",
+   "strike": 56.0,
+   "expiry": "2026-10-09",
+   "reason": "expired worthless",
+   "pnl": 58,
+   "closed": "2026-10-10"
+  },
+  {
+   "type": "CALL מכוסה",
+   "symbol": "CCL",
+   "strike": 26.0,
+   "expiry": "2026-10-09",
+   "reason": "called away",
+   "pnl": 114,
+   "closed": "2026-10-10"
+  },
   {
    "type": "PUT מגובה מזומן",
    "symbol": "UBER",
@@ -626,54 +614,39 @@
    "reason": "stop loss",
    "pnl": -404,
    "closed": "2026-09-28"
-  },
-  {
-   "type": "CALL מכוסה",
-   "symbol": "SOFI",
-   "strike": 18.0,
-   "expiry": "2026-10-02",
-   "reason": "take profit",
-   "pnl": 20,
-   "closed": "2026-09-28"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "RIOT",
-   "strike": 23.5,
-   "expiry": "2026-09-25",
-   "reason": "assigned",
-   "pnl": 108,
-   "closed": "2026-09-26"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "AFRM",
-   "strike": 68.0,
-   "expiry": "2026-09-25",
-   "reason": "expired worthless",
-   "pnl": 53,
-   "closed": "2026-09-26"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "AFRM",
-   "strike": 67.0,
-   "expiry": "2026-09-25",
-   "reason": "expired worthless",
-   "pnl": 70,
-   "closed": "2026-09-26"
-  },
-  {
-   "type": "PUT מגובה מזומן",
-   "symbol": "AFRM",
-   "strike": 68.0,
-   "expiry": "2026-09-25",
-   "reason": "expired worthless",
-   "pnl": 93,
-   "closed": "2026-09-26"
   }
  ],
  "activity_log": [
+  {
+   "time": "2026-10-10 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "AFRM 72.0 exp 2026-10-09 x2 debit 0.00 (expired worthless) pnl $130"
+  },
+  {
+   "time": "2026-10-10 10:00",
+   "action": "CLOSE-CC",
+   "detail": "PYPL 56.0 exp 2026-10-09 x1 debit 0.00 (expired worthless) pnl $58"
+  },
+  {
+   "time": "2026-10-10 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "HOOD 108.0 exp 2026-10-09 x1 debit 0.00 (expired worthless) pnl $178"
+  },
+  {
+   "time": "2026-10-10 10:00",
+   "action": "CLOSE-CSP",
+   "detail": "NOW 133.0 exp 2026-10-09 x1 debit 0.00 (expired worthless) pnl $140"
+  },
+  {
+   "time": "2026-10-10 10:00",
+   "action": "CLOSE-CC",
+   "detail": "CCL 26.0 exp 2026-10-09 x3 debit 0.00 (called away) pnl $114"
+  },
+  {
+   "time": "2026-10-10 10:00",
+   "action": "CALLED-AWAY",
+   "detail": "CCL: sold 300 @ 26.00 stock pnl $1,272"
+  },
   {
    "time": "2026-10-09 20:00",
    "action": "SELL-CSP",
@@ -793,36 +766,6 @@
    "time": "2026-09-30 17:00",
    "action": "SELL-CSP",
    "detail": "MARA 11.0 exp 2026-10-09 x1 credit 0.27 (delta 0.26, wk-yield 1.91%)"
-  },
-  {
-   "time": "2026-09-30 17:00",
-   "action": "SELL-CSP",
-   "detail": "NOW 127.0 exp 2026-10-09 x1 credit 2.06 (delta 0.28, wk-yield 1.26%)"
-  },
-  {
-   "time": "2026-09-30 17:00",
-   "action": "CLOSE-CSP",
-   "detail": "NOW 125.0 exp 2026-10-02 x1 debit 0.46 (take profit) pnl $145"
-  },
-  {
-   "time": "2026-09-30 17:00",
-   "action": "CLOSE-CSP",
-   "detail": "RIOT 22.0 exp 2026-10-02 x1 debit 1.40 (stop loss) pnl $-101"
-  },
-  {
-   "time": "2026-09-29 23:00",
-   "action": "CLOSE-CSP",
-   "detail": "DKNG 20.0 exp 2026-10-09 x1 debit 0.91 (stop loss) pnl $-62"
-  },
-  {
-   "time": "2026-09-29 18:30",
-   "action": "SELL-CC",
-   "detail": "PYPL 56.0 exp 2026-10-09 x1 credit 0.58"
-  },
-  {
-   "time": "2026-09-29 18:30",
-   "action": "SELL-CSP",
-   "detail": "DKNG 19.0 exp 2026-10-09 x3 credit 0.22 (delta 0.19, wk-yield 0.81%)"
   }
  ]
 }
